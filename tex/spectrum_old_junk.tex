@@ -1,0 +1,287 @@
+\documentclass{article}
+\usepackage[latin1]{inputenc}
+\DeclareMathAlphabet{\mathrm}{OT1}{cmss}{m}{n}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{amssymb}
+
+\usepackage[dvips]{geometry}
+\usepackage{url}
+
+\usepackage[pstricks,squaren,cdot]{SIunits}	% used for SI units and other symbols like mu
+
+\geometry{
+	verbose,
+	noheadfoot,
+	paperwidth=24in,
+	paperheight=36in,
+	top=0.0in,
+	bottom=0.0in,
+	left=0.0in,
+	right=0.0in
+}
+
+%	textwidth=24in,
+%	height=36in
+
+
+\newfont{\titlefont}{cmbx10 at 50pt}    %Title Font
+%\newfont{\peoplesize}{cmss10 at 4pt}    %People Font
+
+\usepackage{pstricks,pstcol,pst-3d,pst-node,pst-tree,pst-grad,pst-char,pst-plot}
+\usepackage{color}
+\usepackage{calc}
+\usepackage{multido}
+\usepackage{graphicx} %for the includegraphics function
+
+%\pagecolor{black}
+\pagestyle{empty}	% suppress page numbering
+
+\definecolor{Brown}{rgb}{0.65,0.16,0.16}
+\definecolor{LineGray}{rgb}{0.6,0.6,0.6}
+
+\definecolor{FColor}{rgb}{0.8,0.8,1.0} %Frequency label colour
+\definecolor{WColor}{rgb}{0.8,1.0,0.8} %Wavelength label colour
+\definecolor{EColor}{rgb}{1.0,0.8,0.8} %Energy label colour
+
+\definecolor{DarkRange}{rgb}{0.2,0.2,0.2}
+\definecolor{LightRange}{rgb}{0.4,0.4,0.4}
+
+\newlength{\EMRPosition}  \setlength{\EMRPosition}{-.7in} %vertical centerline for arrows
+\newlength{\EMRPositionA} \setlength{\EMRPositionA}{\EMRPosition-0.2in}
+\newlength{\EMRPositionB} \setlength{\EMRPositionB}{\EMRPosition+0.1in}
+\newlength{\EMRPositionC} \setlength{\EMRPositionC}{\EMRPosition-0.7in} %Far left side of box
+\newlength{\EMRPositionD} \setlength{\EMRPositionD}{\EMRPosition+0.3in} %vertical centerline for alternative arrows
+\newlength{\EMRPositionE} \setlength{\EMRPositionE}{10.1in} %far right side grey backgrounds on chart
+
+\newlength{\AudioPosition}    \setlength{\AudioPosition}{10.4in} % xpos centerline
+\newlength{\AudioPositionA}   \setlength{\AudioPositionA}{\AudioPosition-0.1in} %label left side
+\newlength{\AudioPositionB}   \setlength{\AudioPositionB}{\AudioPosition+0.1in} %label right side
+\newlength{\AudioPositionC}   \setlength{\AudioPositionC}{\AudioPosition-0.2in} %display box left side
+\newlength{\AudioPositionD}   \setlength{\AudioPositionD}{\AudioPosition+0.6in} %display box right side
+\newlength{\AudioPositionE}   \setlength{\AudioPositionE}{\AudioPosition+0.2in} %right side of piano keys
+\newlength{\AudioPositionF}   \setlength{\AudioPositionF}{\AudioPosition-0.5pt} %left side of centerlineline
+\newlength{\AudioPositionG}   \setlength{\AudioPositionG}{\AudioPosition+0.5pt} %right side of centerlineline
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Notes:
+%  - Calibration of the paper size is done with the "\psset{unit=Xin}" setting below
+%    where X should be close to 1.000 depending on your printer.
+%  - All rows are spaced 0.5" apart.
+%  - All columns are determined by dividing the desired width by 12.
+%  - The width should be determined by measuring the circumference of the tube that
+%    the chart is to be wrapped around.
+%    Measure this accurately or use trial and error to line up the sheet once wrapped
+%    around cylinder.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document} %===================================================================
+\flushleft
+
+%\tiny
+%\scriptsize
+%\footnotesize
+\small
+%\normalsize
+%\large
+%\Large
+%\LARGE
+%\huge
+%\Huge
+
+\sffamily
+
+
+
+\psset{unit=1in}% scaling factor for perfect printer to equal 1.000"
+%\psset{unit=1.0041841in}% scaling factor for Home Roland Raven printer to equal 1.000"
+
+\begin{pspicture}(-1,-1)(23,35)
+
+  %black background
+  \psframe[fillstyle=solid, fillcolor=black, linestyle=none, linewidth=0pt](-.8,-.8)(22.8,34.8)
+
+  \rput{0}(5.2,-.7){\small\input{tex/ranges.tex}}
+
+  %Title
+  \rput[B]{0}(9.9,34.15){\titlefont \white The Electromagnetic Radiation Spectrum}
+
+
+
+  \rput{0}(3.2,-.6){\input{sources/sources.tex}}
+
+  \rput{0}(20.1,-.6){\input{sizes/sizes.tex}}
+
+  %Left side notes
+\rput{0}(3,7){
+  	\parbox[t]{3.1in}{
+
+  %description of How to read this chart
+  \psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=FColor, linecolor=FColor]
+  	{\parbox[t]{3.1in}{\input{tex/description.tex}}}
+
+	\vspace{0.1in}
+
+  \psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=FColor, linecolor=FColor]
+  	{\parbox[t]{3.1in}{\input{tex/ultraviolet.tex}}}
+
+	\vspace{0.1in}
+
+  \psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=FColor, linecolor=FColor]
+  	{\parbox[t]{3.1in}{\input{tex/infrared.tex}}}
+
+	\vspace{0.1in}
+
+  \psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=FColor, linecolor=FColor]
+  	{\parbox[t]{3.1in}{\input{tex/polarization.tex}}}
+
+	\vspace{0.1in}
+
+  \psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=black, linecolor=FColor]
+  	{\parbox[t]{3.1in}{\textcolor{white}{\Large Refraction}\\
+	\centerline{\includegraphics{pictures/prism.eps}}\\
+	\textcolor{white}{By using a glass prism, white light can be spread by refraction into a spectrum its composite colours. All wavelengths of EMR can be refracted by using the proper materials.}}}
+
+	\vspace{0.1in}
+
+  \psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=black, linecolor=FColor]
+  	{\parbox[t]{3.1in}{\textcolor{white}{\Large Reflection}\\
+	\vspace{1in}
+	\rput[t]{0}(.5,-.8){\input{pictures/reflection.tex}}\\
+	\textcolor{white}{EMR of any wavelength can be reflected, however, the reflectivity of a material depends on many factors including the wavelength of the incident beam. The angle of incidence $\theta_i$ and angle of reflection $\theta_r$ are the same.}}}
+
+	\vspace{0.1in}
+
+  \psframe[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=white, linecolor=FColor](-1.2,-1.25)(2,1.05)
+	\input{pictures/emr.tex}
+
+	\vspace{0.1in}
+
+  \psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=FColor, linecolor=FColor]
+  	{\parbox[t]{3.1in}{\input{tex/interesting.tex}}}
+
+}
+}
+
+  %Right side notes
+  %Notes, table of conversions
+  \definecolor{BackColor}{rgb}{1,1,0.9}
+  \rput[tl]{0}(15.6,33.6){\psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=BackColor, linecolor=BackColor]
+  	{\parbox[t]{3.8in}{\input{tex/notes.tex}}}}
+
+  \rput[l]{0}(15.6,25.7){\psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=FColor, linecolor=FColor]
+  	{\parbox[t]{3.8in}{\input{tex/visible.tex}}}}
+
+  \rput[tl]{0}(15.6,24.1){\psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=FColor, linecolor=FColor]
+  	{\parbox[t]{3.8in}{\input{tex/laser.tex}}}}
+
+  \definecolor{BackColor}{rgb}{1,1,0.9}
+  \rput[tl]{0}(15.6,19.4){\psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=FColor, linecolor=FColor]
+  	{\parbox[t]{2.1in}{\input{tex/radiotext.tex}}}}
+
+  \rput[tl]{0}(15.6,16.15){\psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=FColor, linecolor=FColor]
+  	{\parbox[t]{2.1in}{\input{tex/weatherradio.tex}}}}
+
+  %\rput[tl]{0}(15.4,15.8){\psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=BackColor, linecolor=BackColor]{\parbox[t]{2.1in}{\input{tex/satellite.tex}}}}
+
+  \rput[tl]{0}(17.9,19.4){\psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=FColor, linecolor=FColor]
+  	{\parbox[t]{1.5in}{\input{tex/cbradio.tex}}}}
+
+  \rput[tl]{0}(15.6,14.45){\psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=FColor, linecolor=FColor]
+  	{\parbox[t]{3.8in}{\input{tex/tvtext.tex}}}}
+
+  %description of sound
+  %\definecolor{SoundDescriptionColor}{rgb}{0.7,0.7,1}
+  \rput[tl]{0}(16.3,9.9){\psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=FColor,linecolor=FColor]
+  	{\parbox[t]{3.1in}{\input{tex/sound.tex}}}}
+  \rput[tl]{0}(17.3,5.05){\psframe[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=white,linecolor=FColor]
+  	(-1,-1.35)(2.2,.4)\input{pictures/soundwave.tex}}
+
+
+  %\definecolor{BackColor}{rgb}{1,0.9,0.9}
+  \rput[tl]{0}(16.5,3){\psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=FColor, linecolor=FColor]
+  	{\parbox[t]{2.9in}{\input{tex/brain.tex}}}}
+
+
+
+  % People/Discoverers
+  \rput{0}(21.2,17.1){
+  	\parbox[t]{1in}{\tiny
+
+	\psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=WColor, linecolor=WColor]
+  	{\parbox[t]{1in}{\includegraphics{pictures/watt.eps} \input{pictures/watt.tex}}} %1736
+
+	\vspace{0.1in}
+
+	\psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=WColor, linecolor=WColor]
+  	{\parbox[t]{1in}{\includegraphics{pictures/coulomb.eps} \input{pictures/coulomb.tex}}} %1736
+
+	\vspace{0.1in}
+
+	\psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=WColor, linecolor=WColor]
+	{\parbox[t]{1in}{\includegraphics{pictures/volta.eps} \input{pictures/volta.tex}}} %1745
+
+	\vspace{0.1in}
+
+	\psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=WColor, linecolor=WColor]
+	{\parbox[t]{1in}{\includegraphics{pictures/ampere.eps} \input{pictures/ampere.tex}}} %1775
+
+	\vspace{0.1in}
+
+	\psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=WColor, linecolor=WColor]
+  	{\parbox[t]{1in}{\includegraphics{pictures/ohm.eps} \input{pictures/ohm.tex}}} %1789
+
+	\vspace{0.1in}
+
+	\psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=WColor, linecolor=WColor]
+	{\parbox[t]{1in}{\includegraphics{pictures/meter.eps} \input{pictures/meter.tex}}} %1791
+
+	\vspace{0.1in}
+
+	\psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=WColor, linecolor=WColor]
+	{\parbox[t]{1in}{\includegraphics{pictures/faraday.eps} \input{pictures/faraday.tex}}} %1791
+
+	\vspace{0.1in}
+
+	\psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=WColor, linecolor=WColor]
+  	{\parbox[t]{1in}{\includegraphics{pictures/siemens.eps} \input{pictures/siemens.tex}}} %1816
+
+	\vspace{0.1in}
+
+	\psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=WColor, linecolor=WColor]
+	{\parbox[t]{1in}{\includegraphics{pictures/joule.eps} \input{pictures/joule.tex}}} %1818
+
+	\vspace{0.1in}
+
+	\psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=WColor, linecolor=WColor]
+	{\parbox[t]{1in}{\includegraphics{pictures/maxwell.eps} \input{pictures/maxwell.tex}}} %1831
+
+	\vspace{0.1in}
+
+	\psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=WColor, linecolor=WColor]
+  	{\parbox[t]{1in}{\includegraphics{pictures/bell.eps} \input{pictures/bell.tex}}} %1847
+
+	\vspace{0.1in}
+
+	\psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=WColor, linecolor=WColor]
+  	{\parbox[t]{1in}{\includegraphics{pictures/tesla.eps} \input{pictures/tesla.tex}}} %1856
+
+	\vspace{0.1in}
+
+	\psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=WColor, linecolor=WColor]
+	{\parbox[t]{1in}{\includegraphics{pictures/hertz.eps} \input{pictures/hertz.tex}}} %1857
+
+	\vspace{0.1in}
+
+	\psframebox[cornersize=absolute,linearc=4pt,fillstyle=solid,fillcolor=WColor, linecolor=WColor]
+	{\parbox[t]{1in}{\includegraphics{pictures/planck.eps} \input{pictures/planck.tex}}} %1858
+
+	}
+	}
+
+  \rput[l]{0}(1,-.6){\input{tex/contact.tex}}
+
+\end{pspicture}
+
+
+\end{document} %===============================================================

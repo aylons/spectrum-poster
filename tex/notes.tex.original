@@ -1,0 +1,49 @@
+%Notes:
+
+%  Symbols here require \usepackage{SIunits}
+
+SI Units:\\
+\begin{tabular}{|c|c|l|l|}\hline
+Symbol & Name & Exponent & Multiplier\\ \hline
+\yotta& yotta   & \yottad  & 1,000,000,000,000,000,000,000,000\\
+\zetta& zetta   & \zettad  & 1,000,000,000,000,000,000,000\\
+\exa& exa   & \exad  & 1,000,000,000,000,000,000\\
+\peta& peta  & \petad  & 1,000,000,000,000,000\\
+\tera& tera  & \terad  & 1,000,000,000,000\\
+\giga& giga  & \gigad   & 1,000,000,000\\
+\mega& mega  & \megad   & 1,000,000\\
+\kilo& kilo  & \kilod   & 1,000\\
+ &       & $10^{0}$   & 1\\
+\milli& milli & \millid  & 0.001\\
+\micro& micro & \microd  & 0.000 001\\
+\nano& nano  & \nanod  & 0.000 000 001\\
+\pico& pico  & \picod & 0.000 000 000 001\\
+\femto& femto & \femtod & 0.000 000 000 000 001\\
+\atto& atto  & \attod & 0.000 000 000 000 000 001\\
+\zepto& zepto & \zeptod & 0.000 000 000 000 000 000 001\\
+\yocto& yocto & \yoctod & 0.000 000 000 000 000 000 000 001\\
+\hline
+\end{tabular}\\
+
+
+Measurements on this chart:\\
+\begin{tabular}{|c|c|c|}\hline
+Symbol     & Name                          & Value                                             \\ \hline
+$c$        & Speed of Light                & 2.997 924 58 $\times 10^{8}$ \metrepersecond      \\
+$h$        & Planck Constant               & 1.054 592 $\times 10^{-34}$  \joule \cdot \second \\
+$f$        & Frequency (cycles per second) & Hz                                                \\
+$\lambda$  & Wavelength (meters)           & \metre                                            \\
+$E$        & Energy (electron volts)       & \electronvolt                                     \\
+\hline
+\end{tabular}\\
+
+
+Conversions:\\
+\fbox{\parbox[t]{1.2in}{\begin{eqnarray}
+  E             &=& h \cdot f          \nonumber\\
+  \lambda       &=& \frac{c}{f}        \nonumber\\
+  1\angstrom    &=& 0.1\nano\metre     \nonumber\\
+  1\nano\metre  &=& 10\angstrom        \nonumber\\
+  1Joule        &=& 6.24 \times 10^{18} \electronvolt \nonumber
+\end{eqnarray}}
+}
