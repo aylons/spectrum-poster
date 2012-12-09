@@ -7,9 +7,9 @@ all: numbers spectrum
 spectrum:
 	latex tex/spectrum.tex
 	dvips  -Ppdf -T 24in,36in spectrum.dvi -f > spectrum.eps
-	#ps2pdf spectrum.eps spectrum_current.pdf
-	/usr/bin/gs-gpl -dSAFER -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=spectrum_current.pdf -dSAFER -c .setpdfwrite -f spectrum.eps
-	acroread spectrum_current.pdf&
+	ps2pdf spectrum.eps spectrum_current.pdf
+#	/usr/bin/gs-gpl -dSAFER -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=spectrum_current.pdf -dSAFER -c .setpdfwrite -f spectrum.eps
+	evince spectrum_current.pdf&1
 
 thumbnail:
 	convert spectrum.eps -scale 300 full_thumbnail.jpg
@@ -48,7 +48,7 @@ clean:
 new:
 	cp spectrum_current.pdf /home/anthony/web/unihedron/projects/spectrum/downloads/
 	sitecopy --update unihedron
-	
+
 # make a distributable file of the source code
 dist:
 	if test -d "$(NAME)-$(VERSION)"; then rm -rf $(NAME)-$(VERSION); fi
