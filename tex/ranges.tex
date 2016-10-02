@@ -104,6 +104,7 @@
 
 \psline{<->}(\LargeLabelPosition,17.080)(\LargeLabelPosition,9.144)
 \uput[180]{90}(\LargeLabelPosition,13.11){RADIO WAVES}
+
 }
 
 
@@ -458,15 +459,17 @@
   \psframe[linestyle=solid,linecolor=yellow,fillstyle=hlines,hatchangle=45,hatchcolor=yellow](4.37,15.15)(8.22,15.25)
 
   %from http://www.dxing.com/tuning.htm 72 to 76 MHz: This range is used for remote control signals for model airplanes and garage door openers, wireless microphones (including those used by law enforcement agencies), and two-way communications inside factories, warehouses, and other industrial facilities. Most channels are spaced at 20 kHz intervals.
-  \psframe[framearc=0.25](0.99,16.0)(1.76,16.2)\rput(1.38,16.1){\textcolor{Black}{Remote Ctrl}}
+  \psframe[framearc=0.25](0.99,16.0)(1.76,16.1)\rput(1.38,16.05){\textcolor{Black}{\tiny Remote Ctrl}}
 
 }
 
+  \input{tex/itinerant.tex}%some extra radio frequencies
+
   % CB Radio 26.960-27.260 MHz
   \definecolor{BoxColor}{rgb}{0.6,0.68,0.86}
-  \psframe[fillstyle=solid, fillcolor=BoxColor,linewidth=0pt,linestyle=none](6.71,15.15)(6.86,15.35)
+  \psframe[fillstyle=solid, fillcolor=BoxColor,linewidth=0pt,linestyle=none](6.71,15.1)(6.86,15.3)
   %\rput(6.78,15.20){26.960-27.260MHz}
-  \rput(6.78,15.25){CB}
+  \rput(6.78,15.2){CB}
 
 
   % Digital Television (DTV) Television (Analog) VHF & UHF (Audio??) 54-72MHz
@@ -490,16 +493,19 @@
   \definecolor{BoxColor}{rgb}{0.6,0.68,0.86}
   \psframe[fillstyle=solid, fillcolor=BoxColor,linewidth=0pt,linestyle=none](6.73,16.1)(9.80,16.3)\wrapuparrow{BoxColor}{16.2}
   \psframe[fillstyle=solid, fillcolor=BoxColor,linewidth=0pt,linestyle=none](0.00,16.6)(0.19,16.8)\wrapdnarrow{BoxColor}{16.75}
-  \rput(8.27,16.2){Aeronautical}
+  \rput(9.07,16.2){Aeronautical}
+
+  \rput(8.39,16.2){\psframebox[linestyle=none,framesep=1pt,fillcolor=red,fillstyle=solid]{\white SOS}}
+
 
   %FM radio is placed here since some labels overlap previously defined labels
   \input{tex/fmradio.tex}
 
   % Marine mobile 162-174 MHz
   \definecolor{BoxColor}{rgb}{0.6,0.86,0.86}
-  \psframe[fillstyle=solid, fillcolor=BoxColor,linewidth=0pt,linestyle=none](2.66,16.7)(3.67,16.8)
+  \psframe[fillstyle=solid, fillcolor=BoxColor,linewidth=0pt,linestyle=none](2.66,16.6)(3.67,16.7)
   %\rput(2.66,16.70){162MHz}
-  \rput(3.17,16.75){Marine Mobile}
+  \rput(3.17,16.65){Marine Mobile}
 
   % Digital Television (DTV) Television (Analog) VHF & UHF  174-216 MHz
   %\definecolor{BoxColor}{rgb}{0.6,0.8,0.8}
@@ -520,15 +526,17 @@
 
   %from http://www.dxing.com/above30.htm 225 to 400 MHz: This very wide band is used for military aviation communications in AM. Most channels are 100 kHz apart.
   \definecolor{BoxColor}{rgb}{0.6,0.68,0.86}
-  \psframe[fillstyle=solid, fillcolor=BoxColor,linewidth=0pt,linestyle=none](7.30,16.7)(9.80,16.8)\wrapuparrow{BoxColor}{16.75}
+  \psframe[fillstyle=solid, fillcolor=BoxColor,linewidth=0pt,linestyle=none](7.30,16.6)(9.80,16.8)\wrapuparrow{BoxColor}{16.7}
   \psframe[fillstyle=solid, fillcolor=BoxColor,linewidth=0pt,linestyle=none](0.00,17.2)(5.64,17.3)\wrapdnarrow{BoxColor}{17.25}
-  \rput(8.55,16.75){Military}
+  \rput(9.07,16.7){Military}
+  \rput(8.39,16.7){\psframebox[linestyle=none,framesep=1pt,fillcolor=red,fillstyle=solid]{\white SOS}}
   \rput(2.82,17.25){Military}
 
 %from http://www.dxing.com/above30.htm 400 to 406 MHz: This range is used primarily by government and military stations in FM.
 %from http://www.dxing.com/above30.htm 406 to 420 MHz: In the United States, this band is used exclusively by the federal government. All transmissions are in FM, with most channels spaced at 25 kHz intervals.
   \definecolor{BoxColor}{rgb}{0.9,0.68,0.86}
-  \psframe[fillstyle=solid, fillcolor=BoxColor,linewidth=0pt,linestyle=none](5.64,17.2)(6.33,17.3) \rput(5.98,17.25){Gov}
+  \psframe[fillstyle=solid, fillcolor=BoxColor,linewidth=0pt,linestyle=none](5.64,17.2)(6.33,17.35) \rput(6.15,17.28){Gov}
+  \rput(5.85,17.27){\psframebox[linestyle=none,framesep=1pt,fillcolor=red,fillstyle=solid]{\white SOS}}
 
 
   % HyperBand-CATV Ch 37-62 (300-456 MHz)
@@ -563,7 +571,9 @@
   \psframe(0.0,18.05)(8.79,18.25)\wrapdnarrow{Fill}{18.15}
   \psdots[linewidth=1.2pt,linecolor=white,linestyle=none, fillcolor=white, dotstyle=triangle*](8.79,17.52)
   \rput(8.79,17.75){\textcolor{white}{1GHz}}
-  \rput(3,18.14){\psframebox[fillstyle=solid,fillcolor=Fill,framesep=2pt]{\textcolor{white}{Microwave L-band (Long)}}}
+%   \rput(4,18.14){\psframebox[fillstyle=solid,fillcolor=Fill,framesep=2pt]{\textcolor{white}{Microwave L-band (Long)}}}
+  \rput(4.715,18.14){\psframebox[fillstyle=solid,fillcolor=Fill,framesep=2pt]{\textcolor{white}{Microwave L-band}}}
+  \rput(5.825,18.14){\psframebox[fillstyle=solid,fillcolor=Fill,framesep=2pt]{\textcolor{white}{(Long)}}}
 
   %Hydrogen line at 21cm (1.42758313333 GHz)
   %Idea from Douglas Scott
@@ -614,7 +624,7 @@
 
   %Weather stations
   \rput(9.46,12.2){\weatherstation}%512kHz
-  \rput(0.29,16.75){\weatherstation}%137MHz
+  \rput(0.29,16.7){\weatherstation}%137MHz
   \rput(2.70,16.55){\weatherstation}%162.48MHz
 
 
@@ -682,7 +692,7 @@
 {%C-Band satellite channels
 \tiny
   \psset{framesep=1pt,framearc=.25,fillcolor=green,fillstyle=solid}
-  \rput(7.77,18.55){\psframebox{01}}	%3720
+  \rput(7.77,18.55){\psframebox{01}}	%3720MHz
   \rput(7.84,18.65){\psframebox{02}}	%3740
   \rput(7.92,18.55){\psframebox{03}}	%3760
   \rput(7.99,18.65){\psframebox{04}}	%3780
@@ -707,13 +717,14 @@
   \rput(9.35,18.55){\psframebox{23}}	%4160
   \rput(9.42,18.65){\psframebox{24}}	%4180
 }
+
   % Microwave X-band (8-12.5 GHz)
   \definecolor{Fill}{rgb}{0.5,0.1,0.67}\psset{hatchcolor=Fill}
   \psframe(8.79,19.05)(9.8,19.25)\wrapuparrow{Fill}{19.15}
   \psframe(0.0,19.55)(5.30,19.75)\wrapdnarrow{Fill}{19.65}
   \psdots[linewidth=1.2pt,linecolor=white,linestyle=none, fillcolor=white, dotstyle=triangle*](8.79,19.02)
   \rput(8.79,19.15){\textcolor{white}{8GHz}}
-  \rput(3.5,19.65){\psframebox[fillstyle=solid,fillcolor=Fill,framesep=2pt]{\textcolor{white}{Microwave X-band (X marks the spot)}}}
+  \rput(3.25,19.65){\psframebox[fillstyle=solid,fillcolor=Fill,framesep=2pt]{\textcolor{white}{Microwave X-band (X marks the spot)}}}
 
   % Microwave Ku-band (12.5-18 GHz)
   \definecolor{Fill}{rgb}{0.6,0.1,0.67}\psset{hatchcolor=Fill}
@@ -722,7 +733,7 @@
   \psline[linecolor=Black,linewidth=1pt,linestyle=solid](5.30,19.55)(5.30,19.75)
   \psdots[linewidth=1.2pt,linecolor=white,linestyle=none, fillcolor=white, dotstyle=triangle*](5.30,19.52)
   \rput(5.30,19.65){\textcolor{white}{12.5GHz}}
-  \rput(8,19.65){\psframebox[fillstyle=solid,fillcolor=Fill,framesep=2pt]{\textcolor{white}{Microwave Ku-band (Kurtz Under)}}}
+  \rput(8.4,19.65){\psframebox[fillstyle=solid,fillcolor=Fill,framesep=2pt]{\textcolor{white}{Microwave Ku-band (Kurtz Under)}}}
 
   % Microwave K-band (18-27.25 GHz)
   \definecolor{Fill}{rgb}{0.7,0.1,0.67}\psset{hatchcolor=Fill}
@@ -730,10 +741,110 @@
   \psline[linecolor=Black,linewidth=1pt,linestyle=solid](0.66,20.05)(0.66,20.25)
   \psdots[linewidth=1.2pt,linecolor=white,linestyle=none, fillcolor=white, dotstyle=triangle*](0.66,20.02)
   \rput(0.66,20.15){\textcolor{white}{18GHz}}
-  \rput(2,20.15){\psframebox[fillstyle=solid,fillcolor=Fill,framesep=2pt]{\textcolor{white}{Microwave K-band (Kurtz)}}}
+  \rput(1.85,20.15){\psframebox[fillstyle=solid,fillcolor=Fill,framesep=2pt]{\textcolor{white}{Microwave K-band (Kurtz)}}}
+
+
+
+{%K-Band satellite channels ref: "Telesat, Anik F3 Ku-Band Channel Centre Frequencies"
+\small
+% \newlength{\KBA}  \setlength{\KBA}{19.52in} %vertical position of kBand channels 1-16
+% \newlength{\KBB}  \setlength{\KBB}{19.57in} %vertical position of kBand channels 17-32
+
+  \psset{framesep=1pt,fillcolor=BrightGreen,fillstyle=solid,dotstyle=triangle,linecolor=BrightGreen}
+% Upload channels 1-16
+	\psdots(6.921,19.57)	% 14014750000.00Hz
+	\psdots(6.952,19.57)	% 14045250000.00Hz
+	\psdots(6.982,19.57)	% 14075750000.00Hz
+	\psdots(7.013,19.57)	% 14106250000.00Hz
+	\psdots(7.044,19.57)	% 14136750000.00Hz
+	\psdots(7.074,19.57)	% 14167250000.00Hz
+	\psdots(7.104,19.57)	% 14197750000.00Hz
+	\psdots(7.135,19.57)	% 14228250000.00Hz
+	\psdots(7.165,19.57)	% 14258750000.00Hz
+	\psdots(7.195,19.57)	% 14289250000.00Hz
+	\psdots(7.225,19.57)	% 14319750000.00Hz
+	\psdots(7.255,19.57)	% 14350250000.00Hz
+	\psdots(7.286,19.57)	% 14380750000.00Hz
+	\psdots(7.315,19.57)	% 14411250000.00Hz
+	\psdots(7.345,19.57)	% 14441750000.00Hz
+	\psdots(7.375,19.57)	% 14472250000.00Hz
+% Download channels 17-32
+	\psdots(6.934,19.52)	% 14027750000.00Hz
+	\psdots(6.965,19.52)	% 14058250000.00Hz
+	\psdots(6.995,19.52)	% 14088750000.00Hz
+	\psdots(7.026,19.52)	% 14119250000.00Hz
+	\psdots(7.057,19.52)	% 14149750000.00Hz
+	\psdots(7.087,19.52)	% 14180250000.00Hz
+	\psdots(7.117,19.52)	% 14210750000.00Hz
+	\psdots(7.148,19.52)	% 14241250000.00Hz
+	\psdots(7.178,19.52)	% 14271750000.00Hz
+	\psdots(7.208,19.52)	% 14302250000.00Hz
+	\psdots(7.238,19.52)	% 14332750000.00Hz
+	\psdots(7.268,19.52)	% 14363250000.00Hz
+	\psdots(7.298,19.52)	% 14393750000.00Hz
+	\psdots(7.328,19.52)	% 14424250000.00Hz
+	\psdots(7.358,19.52)	% 14454750000.00Hz
+	\psdots(7.388,19.52)	% 14485250000.00Hz
+
+%Draw a little Ku satellite
+\rput{15}(5.93,19.75){
+  \psset{framesep=1pt,framearc=0,fillcolor=BrightGreen,fillstyle=solid,dotstyle=triangle,linewidth=.01in,linestyle=solid,linecolor=BrightGreen}
+  \psline(-0.14,0)(0.14,0)
+  \pscircle(0,0){0.035}
+  \psframe(-.14,.02)(-.06,-.02)
+  \psframe(.14,.02)(.06,-.02)
+}
+  \rput[t](5.93,19.68){\textcolor{BrightGreen}{Ku-band TV}}
+
+%draw arrows showing signal in/out
+{\psset{linecolor=BrightGreen,fillstyle=none,linewidth=1pt,linestyle=solid,linearc=.06}
+ \psline{->}(7.148,19.60)(7.148,19.75)(6.08,19.75)
+ \psline{->}(5.78,19.75)(4.6575,19.75)(4.6575,19.60)
+}
+
+
+% Download channels 1-16
+	\psset{dotangle=180}
+	\psdots(4.387,19.57)	% 11714750000.00Hz
+	\psdots(4.423,19.57)	% 11745250000.00Hz
+	\psdots(4.460,19.57)	% 11775750000.00Hz
+	\psdots(4.497,19.57)	% 11806250000.00Hz
+	\psdots(4.533,19.57)	% 11836750000.00Hz
+	\psdots(4.569,19.57)	% 11867250000.00Hz
+	\psdots(4.606,19.57)	% 11897750000.00Hz
+	\psdots(4.642,19.57)	% 11928250000.00Hz
+	\psdots(4.678,19.57)	% 11958750000.00Hz
+	\psdots(4.714,19.57)	% 11989250000.00Hz
+	\psdots(4.750,19.57)	% 12019750000.00Hz
+	\psdots(4.786,19.57)	% 12050250000.00Hz
+	\psdots(4.822,19.57)	% 12080750000.00Hz
+	\psdots(4.857,19.57)	% 12111250000.00Hz
+	\psdots(4.893,19.57)	% 12141750000.00Hz
+	\psdots(4.928,19.57)	% 12172250000.00Hz
+% Download channels 17-32
+	\psdots(4.402,19.52)	% 11727750000.00Hz
+	\psdots(4.439,19.52)	% 11758250000.00Hz
+	\psdots(4.476,19.52)	% 11788750000.00Hz
+	\psdots(4.512,19.52)	% 11819250000.00Hz
+	\psdots(4.549,19.52)	% 11849750000.00Hz
+	\psdots(4.585,19.52)	% 11880250000.00Hz
+	\psdots(4.621,19.52)	% 11910750000.00Hz
+	\psdots(4.657,19.52)	% 11941250000.00Hz
+	\psdots(4.693,19.52)	% 11971750000.00Hz
+	\psdots(4.729,19.52)	% 12002250000.00Hz
+	\psdots(4.765,19.52)	% 12032750000.00Hz
+	\psdots(4.801,19.52)	% 12063250000.00Hz
+	\psdots(4.837,19.52)	% 12093750000.00Hz
+	\psdots(4.872,19.52)	% 12124250000.00Hz
+	\psdots(4.908,19.52)	% 12154750000.00Hz
+	\psdots(4.943,19.52)	% 12185250000.00Hz
+}
+
+
 
   %water absorption line at 22GHz
-  \rput(2.5,20.05){
+% (3.5,20.05) -1.2x
+  \rput(2.3,20.05){
   \psclip{\psframe[fillstyle=none,linestyle=none](0,0)(2.4,.3)}
     \pscurve[fillstyle=crosshatch,hatchcolor=Black,hatchangle=180,hatchwidth=0.5pt,hatchsep=1pt,fillcolor=blue,linecolor=Black,linestyle=solid]
 	(0,.2)(.75,.15)(1,.02)(1.25,.15)(2,0.2)
@@ -792,7 +903,8 @@
 %  \rput(8,21.15){\psframebox[fillstyle=solid,fillcolor=Fill,framesep=2pt]{\textcolor{white}{Microwave mm-band}}}
 
   %O2 absorption line at 60GHz	http://www.wmo.ch/web/www/TEM/SG-RFC/Ch-5Final.doc
-  \rput(7.88,20.55){
+% (7.88,20.55) -1.2x
+  \rput(6.68,20.55){
   \psclip{\psframe[fillstyle=none,linestyle=none](0,0)(2.4,.3)}
     \pscurve[fillstyle=crosshatch,hatchcolor=Black,hatchangle=180,hatchwidth=0.5pt,hatchsep=1pt,fillcolor=blue,linecolor=Black,linestyle=solid]
 	(0,.2)(.75,.15)(1,.02)(1.25,.15)(2,0.2)
@@ -817,7 +929,8 @@
 
 
   %O2 absorption line at 118.75GHz	http://www.wmo.ch/web/www/TEM/SG-RFC/Ch-5Final.doc
-  \rput(7.73,21.05){
+% (7.73,21.05) -1.2x
+  \rput(6.53,21.05){
   \psclip{\psframe[fillstyle=none,linestyle=none](0,0)(2.4,.3)}
     \pscurve[fillstyle=crosshatch,hatchcolor=Black,hatchangle=180,hatchwidth=0.5pt,hatchsep=1pt,fillcolor=blue,linecolor=Black,linestyle=solid]
 	(0,.2)(.75,.15)(1,.02)(1.25,.15)(2,0.2)
@@ -828,7 +941,8 @@
 
 
   %water absorption line at 183GHz
-  \rput(3.05,21.55){
+% (4.05,21.55) -1.2x
+  \rput(2.85,21.55){
   \psclip{\psframe[fillstyle=none,linestyle=none](0,0)(2.4,.3)}
     \pscurve[fillstyle=crosshatch,hatchcolor=Black,hatchangle=180,hatchwidth=0.5pt,hatchsep=1pt,fillcolor=blue,linecolor=Black,linestyle=solid]
 	(0,.2)(.75,.15)(1,.02)(1.25,.15)(2,0.2)
@@ -1155,25 +1269,43 @@
 
   \submarine{2.43,6.1}{76Hz}
 
-  
+{
 %GPS submitted by Poul-Henning Kamp
 %Each frequency is +/- 15MHz  according to details at http://www.edu-observatory.org/gps/BostonSection.ppt 
-%	L1: 1574.42 MHz    
-\psline[linecolor=yellow,linestyle=solid,linewidth=1pt](1.11,18.25)(5.55,18.25)
 %
-\psframe[fillstyle=solid, fillcolor=yellow](5.28,18.05)(5.55,18.25)
-\rput(5.41,18.20){\textcolor{Black}{GPS}}
-\rput(5.41,18.10){\textcolor{Black}{L1}}
-%	
-%	L2: 1227.60 MHz 
-\psframe[fillstyle=solid, fillcolor=yellow](1.72,18.05)(2.07,18.25)
-\rput(1.89,18.20){\textcolor{Black}{GPS}}
-\rput(1.89,18.10){\textcolor{Black}{L2}}
-%
-%	L5: 1176.45 MHz 
-\psframe[fillstyle=solid, fillcolor=yellow](1.11,18.05)(1.47,18.25)
-\rput(1.29,18.20){\textcolor{Black}{GPS}}
-\rput(1.29,18.10){\textcolor{Black}{L5}}
+\psset{fillstyle=solid, fillcolor=yellow,linecolor=yellow,linewidth=1pt,linestyle=solid}
+% GPS-L1: 1575.4200 MHz (Civil Frequency  Coarse Acquisition)
+% \psline[linecolor=yellow,linestyle=solid,linewidth=1pt](1.11,18.25)(5.55,18.25)
+\psframe(5.24,18.05)(5.6,18.25)\psline(5.42,18.20)(5.42,18)
+\rput(5.42,18.19){\textcolor{Black}{GPS}}
+\rput(5.42,18.10){\textcolor{Black}{\tiny L1 Civil}}
+	
+% GPS-L2: 1227.60 MHz (Military Frequency  	(encrypted) Available 2003)
+\psframe(1.71,18.05)(2.07,18.25)\psline(1.89,18.20)(1.89,18)
+\rput(1.89,18.19){\textcolor{Black}{GPS}}
+\rput(1.89,18.10){\textcolor{Black}{\tiny L2 Mil.}}
+
+% GPS-L3: 1381.0500 MHz (Nuclear Burst Detection  	NUDET - Nuclear Detonation)
+\psframe(3.38,18.05)(3.74,18.25)\psline(3.56,18.20)(3.56,18)
+\rput(3.56,18.19){\textcolor{Black}{GPS}}
+\rput(3.56,18.10){\textcolor{Black}{\tiny L3 Nuc.}}
+
+% GPS-L4: 1841.4000 MHz (Ionospheric correction  	Proposed)
+\psframe(7.45,18.05)(7.81,18.25)\psline(7.63,18.20)(7.63,18)
+\rput(7.63,18.19){\textcolor{Black}{GPS}}
+\rput(7.63,18.10){\textcolor{Black}{\tiny L4 Ion.}}
+
+% GPS-L5: 1176.45 MHz (Proposed Frequency for 2008)
+\psframe(1.11,18.05)(1.47,18.25)\psline(1.29,18.20)(1.29,18)
+\rput(1.29,18.19){\textcolor{Black}{GPS}}
+\rput(1.29,18.10){\textcolor{Black}{\tiny [L5 SoL]}} %Safety of Life 
+
+% GPS 2227.5000MHz Spacecraft Telemetry 
+\psframe(0.34,18.05)(0.7,18.25)\psline(0.52,18.20)(0.52,18)
+\rput(0.52,18.19){\textcolor{Black}{GPS}}
+\rput(0.52,18.10){\textcolor{Black}{\tiny Space}}
+}
+
 
 % % Cs-133 hyperfine transistion at 9,192,631,770Hz, the SI-definition of a second. Thanks to Poul-Henning Kamp 
 \rput{0}(0.96,19.75){\psframebox[framesep=1pt,framearc=0.2,fillstyle=solid, fillcolor=Black,linewidth=0pt,linestyle=none]{\textcolor{white}{Cs-133 9,192,631,770Hz SI-time standard}}}
@@ -1275,9 +1407,9 @@
   \psline{<->}(\EMRPositionD,20.610)(\EMRPositionD,22.063)
   \rput{90}(\EMRPositionD,21.34){\psframebox[fillcolor=DarkRange]{\footnotesize\textcolor{RangesText}{Microwave mm-band}}}
 
-  % Microwave u mm band (300 - 3000 GHz)
+  % Microwave u mm band (300 - 3000 GHz)(Terahertz 1mm - 100umm)
   \psline{<->}(\EMRPositionD,22.063)(\EMRPositionD,23.724)
-  \rput{90}(\EMRPositionD,22.89){\psframebox[fillcolor=DarkRange]{\footnotesize\textcolor{RangesText}{Microwave \micro mm-band}}}
+  \rput{90}(\EMRPositionD,22.89){\psframebox[fillcolor=DarkRange]{\parbox{1.1in}{\begin{center}\footnotesize\textcolor{RangesText}{Microwave \micro mm-band\\Terahertz rays}\end{center}}}}
   \rput[t]{90}(\EMRPositionC,23.724){\psframebox[linestyle=none, fillstyle=solid,fillcolor=Black]{\textcolor{RangesText}{3THz}}}
 
 

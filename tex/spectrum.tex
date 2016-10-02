@@ -56,10 +56,15 @@
 \definecolor{RGBBlackEnd}{rgb}{0.002,0.002,0.002}
 
 \definecolor{IonizingYellow}{rgb}{.88,.88,0}
+\definecolor{Itinerant}{rgb}{0.5,1.0,0.5} %Itinerant frequency color
 
 
 \definecolor{Brown}{rgb}{0.65,0.16,0.16}
+\definecolor{DarkBrown}{rgb}{0.463,0.141,0}
+\definecolor{BrightGreen}{rgb}{0.5,1,.5}
 \definecolor{LineGray}{rgb}{0.6,0.6,0.6}
+\definecolor{Gray80}{rgb}{0.8,0.8,0.8}
+\definecolor{Gray20}{rgb}{0.2,0.2,0.2}
 
 \definecolor{FColor}{rgb}{0.8,0.8,1.0} %Frequency label colour
 \definecolor{WColor}{rgb}{0.8,1.0,0.8} %Wavelength label colour
@@ -141,6 +146,26 @@
 		}
   }
 
+  \newcommand{\pager}{
+	\psset{linecolor=green,linewidth=0.7pt,linestyle=solid,fillstyle=solid,fillcolor=red,linearc=0}
+	\psframebox[linestyle=none,fillstyle=none]{
+		\psline(0,0)(0,-.1)
+		\pscircle(0,0){.05}
+		\rput(0,0){\tiny\black P}
+	}
+  }
+
+
+  \newcommand{\wirelessmic}{
+	\psset{linecolor=Gray20,linewidth=0.7pt,linestyle=solid,fillstyle=solid,fillcolor=DarkBrown,linearc=0}
+	\psframebox[linestyle=none,fillstyle=none]{
+		\pscurve[linearc=0.04,linewidth=0.5pt,fillstyle=none](-0.015,0.06)(0,0.07)(0,0.09)(0,0.12)
+		\psline[linewidth=1.8pt](0,0.1)(0,0.2)
+		\pscircle(0,0.2){.03}
+	}
+  }
+
+
   \newcommand{\astrofilter}[2]{
 	\rput(#1){\black\bfseries%\tiny
 		%\psline[fillstyle=solid,fillcolor=white,linestyle=none](.10;90)(.10;234)(.10;18)(.10;162)(.10;306)(.10;90)
@@ -157,6 +182,7 @@
   \newcommand{\blip}[2]{
 	\rput(#1){
 		\pscurve[linestyle=solid,linewidth=.8pt,linecolor=black,fillstyle=solid,fillcolor=white](-.1,0)(-.08,.02)(0,.2)(.08,.02)(.1,0)
+		\psline[linestyle=solid,linewidth=.8pt,linecolor=white](-.12,0)(.12,0)
 		\rput(0,0.09){\textcolor{Black}{#2}}
 	}
 

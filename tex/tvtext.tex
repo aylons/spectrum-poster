@@ -4,11 +4,14 @@
 \definecolor{HumanAudioColor}{rgb}{0.2,0.2,0.6}
 \begin{itemize}
 
-\item Television is transmitted in the VHF and UHF ranges (30MHz - 3GHz).
+\item Terrestrial broadcast TV uses the VHF and UHF ranges (30MHz - 3GHz)  \psframebox[linestyle=none]{\rput(0.05,.05){\psframebox[fillstyle=solid,framearc=0.25,fillcolor=red]{\textcolor{white}{\tiny 05}}}}\hspace{.1in}.
+
+\item Satellite television is transmitted in the C-band (4 - 8 GHz)
+\psframebox[linestyle=none]{\rput(0.05,.05){\psframebox[fillstyle=solid,framearc=.25,fillcolor=green]{\textcolor{black}{\tiny 05}}}}\hspace{.1in} and Ku-band (12 - 18 GHz)  \psframebox[linestyle=none]{\rput(0.04,0.02){\psdots[framesep=1pt,fillcolor=BrightGreen,fillstyle=solid,dotstyle=triangle,linecolor=BrightGreen](0,0)}}\hspace{.08in} where one of many satellites is shown. To eliminate interference, the stations are broadcast in alternating polarities, for example, Ch 1 is vertical and Ch 2 is horizontal and vice versa on neighbouring satellites.
+
 %\item Each station is transmitted in its own band.
-\item TV channels transmitted over the air are shown as \psframebox[fillstyle=solid,framearc=0.25,fillcolor=red]{\textcolor{white}{TV}}.
-\item TV channels transmitted through cable (CATV) are shown as \psframebox[fillstyle=solid,framearc=0.25,fillcolor=blue]{\textcolor{white}{TV}}. CATV channels starting with ``T-" are channels fed back to the cable TV station (like news feeds).
-\item Air and cable TV stations are broadcast with the separate video, colour, and audio frequency carriers grouped together in a channel band as follows:\vspace{.31in}\\
+\item TV channels transmitted through cable (CATV) are shown as  \psframebox[linestyle=none]{\rput(0.05,.05){\psframebox[fillstyle=solid,framearc=0.1,fillcolor=blue]{\textcolor{white}{\tiny 05}}}}\hspace{.1in}. CATV channels starting with ``T-" are channels fed back to the cable TV station (like news feeds).
+\item Air and cable analog TV stations are broadcast with the separate video, colour, and audio frequency carriers grouped together in a channel band as follows:\vspace{.31in}\\
 	\psframebox[linestyle=none]{\psset{xunit=1.7in}
 		\psline{|<->|}(0,.28)(2.5,.28)\uput{1pt}[90](1.25,.28){6MHz}
 		\white
@@ -27,14 +30,14 @@
 		\uput{1pt}[270](1.915,0){Colour}
 		\uput{1pt}[270](2.375,0){Audio}
 		}\vspace{0.1in}
-\item Satellite channels broadcast in the C-Band are depicted as \psframebox[fillstyle=solid,framearc=.25,fillcolor=green]{TV}. These stations are broadcast in alternating polarities (Ex. Ch 1 is vertical and 2 is horizontal and vice versa on neighbouring satellites).
 
 %TV horizontal refresh
-\item The 15.7 kHz horizontal sweep signal produced by a TV can be heard by some young people. This common contaminant signal to VLF spectra listening is depicted as \hspace{.05in}
-  \psframebox[framearc=0,linearc=0]{
+\item 15.7 kHz horizontal sweep signal is a common contaminant to VLF listening \hspace{.05in}
+  \psframebox[framearc=0,linearc=0]{\rput(0,.05){
 	\psframe[cornersize=relative,linecolor=white, linestyle=solid, linewidth=0.8pt,fillstyle=solid,framearc=.25,fillcolor=red,linearc=0.25](-.1,-.1)(.1,.1)
 	\psline[linecolor=white,linestyle=solid,linewidth=1pt]{<->}(-.1,0)(.1,0)
-  }\hspace{0.07in}.
+  }}\hspace{0.07in}.
+\item Digital compression methods are used for HDTV broadcasts in order to pack more channels into the same 6MHz bandwidth as analog TV.
 
 \end{itemize}
 

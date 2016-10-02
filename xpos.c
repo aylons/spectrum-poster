@@ -34,7 +34,7 @@ int main()
 		ypos = (int)position;
 		startxpos = ((position-(double)ypos))*width;
 		startypos = (double)(ypos)/2+3.05;
-		printf("\t(%.2f,%.2f)",startxpos,startypos);
+		printf("\t(%.3f,%.2f)",startxpos,startypos);
 
 		/*top right corner of box*/
 		position = log(end)/log(2);
@@ -42,7 +42,7 @@ int main()
 		ypos = (int)position;
 		endxpos = ((position-(double)ypos))*width;
 		endypos = (double)(ypos)/2+3.25;
-		printf("(%.2f,%.2f)   ",endxpos,endypos);
+		printf("(%.3f,%.2f)   ",endxpos,endypos);
 
 		/*text label centered in box*/
 		printf("(%.2f,",(endxpos - startxpos)/2 + startxpos);

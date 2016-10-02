@@ -1,5 +1,9 @@
-VERSION=0.17
+VERSION=0.18
 NAME=spectrum
+GS=gs
+
+#for when "a drawing error occurred" in acroread
+# GS=gs-gpl
 
 all: numbers spectrum
 
@@ -7,9 +11,15 @@ all: numbers spectrum
 spectrum:
 	latex tex/spectrum.tex
 	dvips  -Ppdf -T 24in,36in spectrum.dvi -f > spectrum.eps
-	ps2pdf spectrum.eps spectrum_current.pdf
-#	/usr/bin/gs-gpl -dSAFER -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=spectrum_current.pdf -dSAFER -c .setpdfwrite -f spectrum.eps
-	evince spectrum_current.pdf&1
+	#ps2pdf spectrum.eps spectrum_current.pdf
+	/usr/bin/$(GS) -dSAFER -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=spectrum_current.pdf -dSAFER -c .setpdfwrite -f spectrum.eps
+	acroread spectrum_current.pdf&
+
+
+cmyk:
+	gs -dSAFER -dBATCH -dNOPAUSE -dNOCACHE -sDEVICE=pdfwrite \
+	-sColorConversionStrategy=CMYK -dProcessColorModel=/DeviceCMYK \
+	-sOutputFile=spectrum_20100428_cmyk.pdf spectrum_20100428_test.pdf
 
 thumbnail:
 	convert spectrum.eps -scale 300 full_thumbnail.jpg
@@ -17,6 +27,9 @@ thumbnail:
 # makes a huge JPEG file with decent resolution for printing
 jpeg:
 	gs -sDEVICE=jpeg -sOutputFile=spectrum.jpg -r300x300 -dGraphicsAlphaBits=4 spectrum.eps
+
+jpeg600:
+	gs -sDEVICE=jpeg -sOutputFile=spectrum.jpg -r600x600 -dGraphicsAlphaBits=4 spectrum.eps
 
 # Split poster up into smaller printable sheets
 # This function may not work too well with newer versions of "poster" program.
@@ -35,6 +48,18 @@ numbers: numbers.c
 xpos: xpos.c
 	cc -lm -o xpos xpos.c
 
+# Compile the utility to convert a frequency range to positions on chart
+kuband:
+	echo "% Upload channels 1-16" > kbandTV.txt
+	./xposrange.pl 14014.75e6 16 30.5e6 >> kbandTV.txt
+	echo "% Download channels 17-32" >> kbandTV.txt
+	./xposrange.pl 14027.75e6 16 30.5e6 >> kbandTV.txt 
+	echo "% Download channels 1-16" >> kbandTV.txt
+	./xposrange.pl 11714.75e6 16 30.5e6 >> kbandTV.txt
+	echo "% Download channels 17-32" >> kbandTV.txt
+	./xposrange.pl 11727.75e6 16 30.5e6 >> kbandTV.txt
+
+
 # Compile the scales program
 scale: scale.c
 	cc -lm -o scale scale.c
@@ -48,7 +73,7 @@ clean:
 new:
 	cp spectrum_current.pdf /home/anthony/web/unihedron/projects/spectrum/downloads/
 	sitecopy --update unihedron
-
+	
 # make a distributable file of the source code
 dist:
 	if test -d "$(NAME)-$(VERSION)"; then rm -rf $(NAME)-$(VERSION); fi

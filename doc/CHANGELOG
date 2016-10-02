@@ -2,8 +2,18 @@ ALl comments here are in reverse chronological order.
 
 Version	Description
 -------	-----------
+2010-04-28
+ver 0.18
+	- removed CMB prediction history since it is contested
+	- altered gravity speed statement, "not yet determined"
+2007-10-12
+	- released for printing (2000)
+	- Added pagers, wireless mics, FRS, GMRS, Mil&Aero SOS
+	- Added Terahertz rays label to microwave umm band description
+	- tidied up TV and radio description labels.
+	- O2 and Water absorption positions made more precise
 2006-02-19
-	- released to printer 2000 copies
+	- released for printing (2000)
 	- removed water absorption near microwave oven
 	- fixed up drawings that have RGB black to fill in frame which has CMYK black
 	- added frame and descriptiopn for mechanical waves near bottom right

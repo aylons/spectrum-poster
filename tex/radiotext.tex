@@ -41,7 +41,7 @@
 %
 \begin{itemize}
 
-\item The radio spectrum (ELF to EHF) is populated by many more items than can be shown on this chart, only a small sampling of bands used around the world have been shown.
+\item The radio spectrum (ELF to EHF) is populated by many more items than can be shown on this chart. Only a small sampling of bands used around the world have been shown.
 
 \item Communication using EMR is done using either:
 \begin{itemize}
@@ -55,33 +55,37 @@
 \vspace{0.1in}
 \end{itemize}
 
-\item Each country has its own rules and regulations for allotting bands in this region. For more information, look up the radio communications authority in your area (Ex. FCC in the US, DOC in Canada).
+\item Each country has its own rules and regulations for allotting bands in this region. Refer to the authority in your area (Ex. FCC in the USA, DOC in Canada).
 
 \item Not all references agree on the ULF band range, the HAARP range is used here.
 
 \item {\bfseries RA}dio {\bfseries D}etecting {\bfseries A}nd {\bfseries R}anging (RADAR) uses EMR in the microwave range to detect the distance and speed of objects.
 
-\item {\bfseries C}itizens {\bfseries B}and Radio (CB) contains 40 stations between 26.965-27.405MHz.
+\item {\bfseries C}itizens {\bfseries B}and Radio (CB) contains 40 stations between 26.965 - 27.405MHz.
 
 \item Schumann resonance is produced in the cavity between the Earth and the ionosphere. The resonant peaks are depicted as \psframebox[fillstyle=none,linestyle=none]{\blip{0,-.07}{S}}
 
 \item Hydrogen gas emits radio band EMR at 21cm \psframebox[fillstyle=none,linestyle=none]{\blip{0,-.07}{H}}
 
 \item Some individual frequencies are represented as icons:\vspace{0.1in}\\
-\begin{tabular}{cl}
-\psframebox[linestyle=none]{\submarine{0.02,.05}{xxHz}}\hspace{0.2in}\vspace{0.05in} & Submarine communications\\
-\psframebox[linestyle=none]{\rput(0.15,.05){\timestandard}\hspace{.03in}}\vspace{0.05in} & Time and frequency standards\\
-\psframebox[linestyle=none]{\rput(0.14,.05){\psframebox[fillstyle=solid,fillcolor=green,linecolor=green,linearc=0]{\textcolor{Black}{xxm}}}}\hspace{.1in}\vspace{0.05in} & Ham radio and international meter bands\\
+\begin{tabular}{cp{1.9in}cp{1.1in}}
+\psframebox[linestyle=none]{\submarine{0.02,.05}{xxHz}}\hspace{0.2in}\vspace{0.05in} & Submarine communications&
+\psframebox[linestyle=none]{\rput(0.15,.05)\pager}&Pager\\
+\psframebox[linestyle=none]{\rput(0.15,.05){\timestandard}\hspace{.03in}}\vspace{0.05in} & Time / frequency standards&\psframebox[linestyle=none]{\rput(0.15,.05){\weatherstation}\hspace{.03in}\vspace{0.08in}} & Weather stations\\
+\psframebox[linestyle=none]{\rput(0.14,0.01){\psframebox[fillstyle=solid,fillcolor=green,linecolor=green,linearc=0]{\textcolor{Black}{xxm}}}}\hspace{.1in}\vspace{0.05in} & Ham / international meter bands&
 \psframebox[linestyle=none]{\rput(0.15,.04){
 	\psframe[linestyle=solid,linecolor=gray,fillstyle=solid,fillcolor=gray,linearc=0](-.2,-.08)(.2,.08)
-	\psframe[linestyle=solid,linecolor=yellow,fillstyle=hlines,hatchangle=45,hatchcolor=yellow,fillcolor=gray,linearc=0](-.2,-.08)(.2,.08)
+	\psframe[hatchwidth=2pt, hatchsep=1.5pt,linestyle=solid,linecolor=yellow,fillstyle=hlines,hatchangle=45,hatchcolor=yellow,fillcolor=gray,linearc=0](-.2,-.08)(.2,.08)
 	}
 	\hspace{.2in}}\vspace{0.05in}
- 	& Miscellaneous short wave radio\\
-\psframebox[linestyle=none]{\rput(0.15,.05){\weatherstation}\hspace{.03in}\vspace{0.08in}} & Weather stations\\
-\psframebox[linestyle=none]{\rput(0.15,.05){
-	\psframebox[fillstyle=solid,linearc=0,linecolor=yellow,framesep=0pt,fillcolor=yellow,linewidth=1pt,linestyle=solid]{\textcolor{Black}{CP}}
-	}\hspace{.03in}\vspace{0.08in}} & Cellular and PCS Phones (including; FDMA, TDMA, CDMA ranges)
+ 	& Short wave radio\\
+\psframebox[linestyle=none]{\rput(0.05,.05){\psframebox[fillstyle=solid,fillcolor=Itinerant,linecolor=Itinerant,linearc=0,framesep=1pt]{\textcolor{Black}{GMRS}}}}&General Mobile Radio Service&
+\psframebox[linestyle=none]{\rput(0.15,-0.05){\wirelessmic}}&Wireless Microphone\\
+\psframebox[linestyle=none]{\rput(0.11,.05){\psframebox[fillstyle=solid,fillcolor=Itinerant,linecolor=Itinerant,linearc=0,framesep=1pt]{\textcolor{Black}{FRS}}}}&Family Radio Service&
+\psframebox[linestyle=none]{\rput(0.15,.05){\psframebox[fillstyle=solid,linearc=0,linecolor=yellow,framesep=1pt,fillcolor=yellow,linewidth=1pt,linestyle=solid]{\textcolor{Black}{CP}}}\hspace{.03in}\vspace{0.08in}} & Cellular Phones\\
+\psframebox[linestyle=none]{\rput(0.11,.05){\psframebox[linestyle=none,framesep=1pt,fillcolor=red,linearc=0]{\white SOS}}}&
+	\psset{dotsize=1pt 1}Distress signal, in Morse code:\vspace{0.18in}
+\rput(-1.4,-0.18){\rput(0,0.05){\psdots(0,0)(.1,0)(.2,0)\psline{cc-cc}(0.3,0)(0.42,0)\psline{cc-cc}(0.49,0)(0.61,0)\psline{cc-cc}(0.68,0)(0.8,0)\psdots(.9,0)(1,0)(1.1,0)}}&\hspace{0.1in}&\hspace{0.1in}\\
 \end{tabular}
 
 \end{itemize}
